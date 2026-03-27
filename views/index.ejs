@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include("components/header") %>
+    <body>
+        <main>
+            <section class="view__container animation height-70">
+                <div class="container">
+                    <div class="view flex-column-center">
+                        <h1 class="title title-big text-center">
+                            <span class="text text-primary view__title"
+                                >Hashing</span
+                            >
+                        </h1>
+
+                        <div
+                            class="view__content flex-between w-100"
+                            id="todoContent"
+                        >
+                            <div
+                                class="view__item gradient-border flex-column-center height-340"
+                            >
+                                <p class="title">Create:</p>
+                                <form
+                                    class="flex-column-center w-100"
+                                    id="hashForm"
+                                >
+                                    <input
+                                        type="text"
+                                        placeholder="Write Your Password"
+                                        name="password"
+                                        value=""
+                                        required
+                                    />
+
+                                    <select name="hash">
+                                        <option value="" selected disabled>
+                                            Select Hash Type
+                                        </option>
+                                        <option value="cezar">
+                                            Cezar Algorithm
+                                        </option>
+                                        <option value="bcrypt">bcrypt</option>
+                                    </select>
+                                    <button class="btn">Save</button>
+                                </form>
+                            </div>
+                            <div
+                                class="view__item gradient-border flex-column height-340"
+                                id="passwordForm"
+                            >
+                                <p class="title">Hashes List</p>
+
+                                <div class="hashContent flex-column" id="hashContent">
+                                    <% database.forEach(hash => { %>
+                                        <%-include("components/hashItem", {hash})%>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div
+            class="notification__container flex-column"
+            id="notificationContainer"
+        ></div>
+
+        <%-include("components/footer") %>
+    </body>
+</html>

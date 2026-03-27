@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./global.css";
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--dark-background);
+}
+
+/* ======================================== [Navbar] ======================================== */
+nav {
+    padding: 30px 0;
+    position: relative;
+    z-index: 9999;
+}
+
+.logo {
+    font-size: 26px;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+nav li > a {
+    color: var(--text-color);
+    font-size: 16px;
+    position: relative;
+}
+
+nav li > a:not(.active):before {
+    content: "";
+    width: 0;
+    transition: all 0.3s;
+}
+
+nav li > a:not(.active):hover::before {
+    width: 100%;
+}
+
+footer {
+    padding: 10px 0;
+}
+
+/* ======================================== [ View ] ======================================== */
+.view__container {
+    padding: 50px 0;
+}
+
+.view {
+    gap: 50px;
+}
+
+.view__title {
+    font-size: 20px;
+}
+
+.view__content {
+    gap: 30px;
+    justify-content: center;
+}
+
+.view__item {
+    min-width: 280px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--darker-background);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.hashContent {
+    max-height: 200px;
+    overflow-y: auto;
+}
+/* ======================================== [ Notification ] ======================================== */
+.notification__container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+.notification {
+    max-width: 250px;
+    width: 100%;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.4s ease;
+    z-index: 9999;
+    border: 1px solid transparent;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.error {
+    background-color: rgb(227, 52, 52);
+}
+
+.notification.success {
+    background-color: rgb(37, 142, 37);
+}
+
+/* ======================================== [ Media ] ======================================== */
+
+@media screen and (max-width: 768px) {
+    .view__content {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,5 @@
+<div class="todo__item gradient-border flex-between">
+    <p class="title"><%=hash.password.length > 15 ? `${hash.password.slice(0,15)}...` : hash.password %></p>
+    <p class="text"><%=hash.hashedPassword.length > 15 ? `${hash.hashedPassword.slice(0,15)}...` : hash.hashedPassword %></p>
+    <p class="btn"><%=hash.hash%></p>
+</div>
