@@ -1,4 +1,3 @@
-Here’s your updated **README.md** in English, now including your GitHub repository link:
 
 ---
 
