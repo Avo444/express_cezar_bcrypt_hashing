@@ -1,11 +1,13 @@
-const { dbMiddleware } = require("../middleware");
+const { HashController } = require("../controllers");
+const { hashMiddleware } = require("../middleware");
+
 var express = require("express");
 var router = express.Router();
 
-router.get("/", dbMiddleware, function (req, res, next) {
-    const { database } = res.locals;
+const hashController = new HashController();
 
-    res.render("index", { title: "Hashing", database });
-});
+router.get("/", hashController.getHashes);
+router.post("/hash", hashMiddleware, hashController.addHash);
+
 
 module.exports = router;

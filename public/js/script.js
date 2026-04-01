@@ -10,7 +10,7 @@ hashForm?.addEventListener("submit", async (e) => {
         if (!body.hash || !body.password) {
             throw new Error("Please fill all fields!");
         }
-        const response = await fetch("http://localhost:3000/api/hash", {
+        const response = await fetch("http://localhost:3000/hash", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
