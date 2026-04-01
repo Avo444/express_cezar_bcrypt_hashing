@@ -196,5 +196,3 @@ Renders the main page and displays all stored hashes.
 ## ✨ Author
 
 Avo
-
----
